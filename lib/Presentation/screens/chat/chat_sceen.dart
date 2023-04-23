@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:message_app/Presentation/widgets/chat/contact_message.dart';
 import 'package:message_app/Presentation/widgets/chat/my_message.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -33,7 +34,12 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(child: ListView.builder(
               itemCount: 100,
-              itemBuilder: (BuildContext context, int index) {   return const MyMessage();},
+              itemBuilder: (BuildContext context, int index) {   
+                
+                return (index % 2 ==0)
+                ?  const ContactMessage()
+                :const MyMessage();
+                },
                
             )),
             
