@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+class ChatScreen extends StatelessWidget {
+  const ChatScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Padding(
+          padding: EdgeInsets.all(4.0),
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(scale: 8,'https://cdn.leonardo.ai/users/1e8ad927-5483-4ce1-853c-61d217e93da4/generations/f4ead67d-93f4-493f-85b3-3b6f7cef8135/Leonardo_Diffusion_a_soldier_with_futuristic_armor_like_sparta_0.jpg'),
+          ),
+        ),
+        centerTitle: true,
+        title: const Text('chat'),
+      ),
+    );
+  }
+}
