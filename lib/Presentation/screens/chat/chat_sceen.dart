@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:message_app/Presentation/widgets/chat/contact_message.dart';
 import 'package:message_app/Presentation/widgets/chat/my_message.dart';
+import 'package:message_app/Presentation/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -40,9 +41,9 @@ class _ChatView extends StatelessWidget {
                 ?  const ContactMessage()
                 :const MyMessage();
                 },
-               
+              
             )),
-            
+             const MessageFieldBox(),
           ],
         ),
       ),
