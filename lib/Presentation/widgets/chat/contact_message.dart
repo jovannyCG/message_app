@@ -42,5 +42,13 @@ class _ImageMesssage extends StatelessWidget {
         width: size.width * 0.7,
         height: 150,
         fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if(loadingProgress == null)return child;
+          return Container(
+            height: size.width*0.7,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: const Text(' el contacto esta enviando un mensaje'),
+          );
+        },
         ));
 }}
