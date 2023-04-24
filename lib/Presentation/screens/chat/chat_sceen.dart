@@ -44,7 +44,7 @@ class _ChatView extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {   
                 final message = chatProvider.message[index];
                 return (message.fromWho  == FromWho.hers)
-                ?  const ContactMessage()
+                ?  ContactMessage(message: message,)
                 : MyMessage(message: message);
                 },
               
