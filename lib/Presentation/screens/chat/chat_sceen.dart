@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:message_app/Presentation/providers/chat_provider.dart';
 import 'package:message_app/Presentation/widgets/chat/contact_message.dart';
 import 'package:message_app/Presentation/widgets/chat/my_message.dart';
 import 'package:message_app/Presentation/widgets/shared/message_field_box.dart';
+import 'package:message_app/domain/models/message.dart';
+import 'package:provider/provider.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -28,16 +31,18 @@ class _ChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final chatProvider = context.watch<ChatProvider>();
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
             Expanded(child: ListView.builder(
-              itemCount: 100,
+              itemCount: chatProvider.message.length,
               itemBuilder: (BuildContext context, int index) {   
-                
-                return (index % 2 ==0)
+                final message = chatProvider.message[index];
+                return (message.fromWho  == FromWho.hers)
                 ?  const ContactMessage()
                 :const MyMessage();
                 },
