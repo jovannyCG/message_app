@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:message_app/domain/models/message.dart';
 
 class MyMessage extends StatelessWidget {
-  const MyMessage({super.key});
+  final Message message;
+  const MyMessage({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +17,9 @@ children: [
       //shape: BoxShape.circle,
       color: colors.primary
     ),
-    child: const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Text('holaaa', style: TextStyle(color: Colors.white),),
+    child:  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Text(message.text, style: const TextStyle(color: Colors.white),),
     )
   ),
   const SizedBox(height: 10,)
